@@ -28,12 +28,13 @@ app.post("/", function(req,res){
       }
     ]
   };
-  // d514054391a20cc4ec53f53bb23693a0-us14
   var jsonData = JSON.stringify(data);
-  const url = "https://us14.api.mailchimp.com/3.0/lists/37227f7b55";
+  // #{key audience key}
+  const url = "https://us14.api.mailchimp.com/3.0/lists/{key}";
   const options = {
     method : "POST",
-    auth: "Grant:d514054391a20cc4ec53f53bb23693a0-us14"
+    //api key type your key
+    auth: "Grant:{api key}"
   }
   const request = https.request(url, options, function(response){
         if (response.statusCode === 200){
